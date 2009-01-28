@@ -29,7 +29,7 @@
  * @link http://www.neilcrookes.com
  * @copyright (c) 2008 Neil Crookes
  * @license MIT License - http://www.opensource.org/licenses/mit-license.php
- * @link http://github.com/neilcrookes/cakephp/tree/eba730c3f9fbc54494569a2036b5be482466191b/history_component
+ * @link http://github.com/neilcrookes/cakephp/tree/master
  *
  */
 class HistoryComponent extends Object {
