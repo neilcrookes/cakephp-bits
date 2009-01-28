@@ -15,6 +15,27 @@
  * methods to make use of CakePHP's buit-in pagination controller logic and
  * helpers.
  *
+ * Usage:
+ *
+ * Add to app/config/database.php
+ *
+ * var $yahooBoss = array(
+ *   'datasource' => 'yahoo_boss',
+ *   'sites' => 'http://your.site.here',
+ *   'app_id' => 'your_app_id_here',
+ * );
+ *
+ * In your model
+ *
+ * var $useDbConfig = 'yahooBoss';
+ *
+ * function search($conditions, $limit, $page) {
+ *   $ds = ConnectionManager::getDataSource($this->useDbConfig);
+ *   return $ds->webSearch($conditions, $limit, $page);
+ * }
+ *
+ * For advanced usage see my blog
+ *
  * Yahoo Application Id Key required, which you can get it from:
  * @link http://developer.yahoo.com/wsregapp/
  *
