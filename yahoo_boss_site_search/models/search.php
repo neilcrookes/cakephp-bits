@@ -18,10 +18,7 @@ class Search extends AppModel {
    *
    * @var array
    */
-  var $paginate = array(
-    'limit' => 10,
-    'page' => 1,
-  );
+  var $paginate;
 
   /**
    * Stores DataSource for sharign between paginateCount and

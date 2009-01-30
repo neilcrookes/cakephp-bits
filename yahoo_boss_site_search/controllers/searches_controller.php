@@ -2,6 +2,11 @@
 
 class SearchesController extends AppController {
 
+  var $paginate = array(
+    'limit' => 10,
+    'page' => 1
+  );
+
   function results() {
 
     if (!empty($this->data['Search']['term'])) {
@@ -14,12 +19,14 @@ class SearchesController extends AppController {
     }
 
     if (isset($this->passedArgs['show'])) {
-      $this->Search->paginate['limit'] = $this->passedArgs['show'];
+      $this->paginate['limit'] = $this->passedArgs['show'];
     }
 
     if (isset($this->passedArgs['page'])) {
-      $this->Search->paginate['page'] = $this->passedArgs['page'];
+      $this->paginate['page'] = $this->passedArgs['page'];
     }
+
+    $this->Search->paginate = $this->paginate;
 
     $results = $this->paginate('Search', array('term' => $term));
 
