@@ -8,10 +8,6 @@ echo $form->end(__('Search', true));
 
   <p><?php __('You searched for '); echo $term; ?></p>
 
-  <?php if (!empty($spellingSuggestion)) : ?>
-    <p><?php __('Did you mean '); echo $html->link($spellingSuggestion, array('term' => urlencode($spellingSuggestion))); ?></p>
-  <?php endif; ?>
-
   <?php if (!empty($results)) : ?>
 
     <div class="pagination_info">
@@ -56,6 +52,10 @@ echo $form->end(__('Search', true));
 
     <p><?php __('Sorry, no results.'); ?></p>
 
+  <?php endif; ?>
+
+  <?php if (!empty($spellingSuggestion)) : ?>
+    <p><?php __('Did you mean '); echo $html->link($spellingSuggestion, array('term' => urlencode($spellingSuggestion))); ?></p>
   <?php endif; ?>
 
 <?php endif; ?>
