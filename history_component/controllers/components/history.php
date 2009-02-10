@@ -131,7 +131,7 @@ class HistoryComponent extends Object {
     $uri = null;
 
     if (isset($this->params['url']['url'])) {
-      $uri = $this->params['url']['url'];
+      $uri = '/'.$this->params['url']['url'];
     }
 
     if (!is_string($uri) || empty($uri)) {
