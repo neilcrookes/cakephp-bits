@@ -130,8 +130,8 @@ class HistoryComponent extends Object {
 
     $uri = null;
 
-    if (isset($_SERVER['REQUEST_URI'])) {
-      $uri = $_SERVER['REQUEST_URI'];
+    if (isset($this->params['url']['url'])) {
+      $uri = $this->params['url']['url'];
     }
 
     if (!is_string($uri) || empty($uri)) {
